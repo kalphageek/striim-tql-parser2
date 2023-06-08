@@ -34,4 +34,5 @@ public class CdcJobReader implements ItemReader<CdcJobEntity> {
             return null;
         }
     }
+
 }
