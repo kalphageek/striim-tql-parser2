@@ -1,0 +1,3 @@
+domain:
+  apis:
+    cache-api: http://localhost:9561
