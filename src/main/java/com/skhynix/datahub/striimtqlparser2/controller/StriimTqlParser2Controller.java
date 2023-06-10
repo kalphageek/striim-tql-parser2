@@ -2,7 +2,6 @@ package com.skhynix.datahub.striimtqlparser2.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.*;
-import org.springframework.batch.core.configuration.JobRegistry;
 import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;

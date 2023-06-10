@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 public class MockCacheApi {
-    public static void setupGetOfficeResponse(WireMockServer mockCacheApi) {
+    public static void setupStriimApiClient_getStatus(WireMockServer mockCacheApi) {
         mockCacheApi.stubFor(WireMock.get(WireMock.urlMatching("/api/[\\w-_\\.]*/status"))
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.OK.value())
