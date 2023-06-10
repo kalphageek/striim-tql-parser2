@@ -1,13 +1,12 @@
 package com.skhynix.datahub.striimtqlparser2.batch;
 
-import java.util.List;
-
 import com.skhynix.datahub.striimtqlparser2.secondary.entity.Manager;
 import com.skhynix.datahub.striimtqlparser2.secondary.repository.ManagerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 
 @RequiredArgsConstructor
