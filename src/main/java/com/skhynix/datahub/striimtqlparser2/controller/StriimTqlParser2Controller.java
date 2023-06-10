@@ -24,7 +24,7 @@ public class StriimTqlParser2Controller {
     private final Job job;
 
     @PostMapping("/batch/{jobName}")
-    public ResponseEntity runMyJob(@PathVariable String jobName) {
+    public ResponseEntity runMyJob(@PathVariable("jobName") String jobName) {
         ExitStatus exitStatus;
         JobParameters jobParameters = new JobParametersBuilder(jobExplorer)
                 .getNextJobParameters(job)
