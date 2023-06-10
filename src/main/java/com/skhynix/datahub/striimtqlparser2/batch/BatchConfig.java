@@ -22,10 +22,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 public class BatchConfig {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
-    private final MyCustomReader myCustomReader;
+//    private final MyCustomReader myCustomReader;
+    private final MyCustomReader2 myCustomReader;
     private final MyCustomWriter myCustomWriter;
     private final MyCustomProcessor myCustomProcessor;
-    @Qualifier(Constants.CatalogTransactionManager)
+    @Qualifier(Constants.SecondaryTransactionManager)
     private final PlatformTransactionManager transactionManager;
 
     @Bean
