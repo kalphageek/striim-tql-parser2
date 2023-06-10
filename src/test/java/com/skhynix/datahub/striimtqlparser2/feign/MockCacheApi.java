@@ -2,9 +2,11 @@ package com.skhynix.datahub.striimtqlparser2.feign;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
+@TestConfiguration
 public class MockCacheApi {
     public static void setupStriimApiClient_getStatus(WireMockServer mockCacheApi) {
         mockCacheApi.stubFor(WireMock.get(WireMock.urlMatching("/api/[\\w-_\\.]*/status"))

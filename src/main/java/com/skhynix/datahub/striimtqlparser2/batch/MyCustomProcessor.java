@@ -2,7 +2,7 @@ package com.skhynix.datahub.striimtqlparser2.batch;
 
 import com.skhynix.datahub.striimtqlparser2.catalog.entity.Employee;
 import com.skhynix.datahub.striimtqlparser2.secondary.entity.Manager;
-import com.skhynix.datahub.striimtqlparser2.service.proxy.StriimApiClient;
+import com.skhynix.datahub.striimtqlparser2.feign.proxy.StriimApiClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;

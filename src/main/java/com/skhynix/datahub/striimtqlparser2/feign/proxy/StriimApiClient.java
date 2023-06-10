@@ -1,4 +1,4 @@
-package com.skhynix.datahub.striimtqlparser2.service.proxy;
+package com.skhynix.datahub.striimtqlparser2.feign.proxy;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -7,6 +7,7 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,12 +21,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class StriimTqlParser2Controller {
     private final JobLauncher jobLauncher;
     private final JobExplorer jobExplorer;
-    private final Job job;
+    private final ApplicationContext context;
 
     @PostMapping("/batch/{jobName}")
     public ResponseEntity runMyJob(@PathVariable("jobName") String jobName) {
         ExitStatus exitStatus;
+        long currentTimeMillis = System.currentTimeMillis();
+        Job job = context.getBean(jobName, Job.class);
+
         JobParameters jobParameters = new JobParametersBuilder(jobExplorer)
+                .addLong("currentTimeMillis", currentTimeMillis)
                 .getNextJobParameters(job)
                 .toJobParameters();
         try {

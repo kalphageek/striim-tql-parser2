@@ -29,7 +29,7 @@ public class BatchConfig {
     @Qualifier(Constants.SecondaryTransactionManager)
     private final PlatformTransactionManager transactionManager;
 
-    @Bean
+    @Bean(name = "MyJob")
     public Job createJob() {
         return jobBuilderFactory.get("MyJob")
                 .incrementer(new RunIdIncrementer())
