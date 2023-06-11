@@ -1,4 +1,4 @@
-package com.skhynix.datahub.striimtqlparser2.batch;
+package com.skhynix.datahub.striimtqlparser2.batch.backup;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,9 +16,9 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class MyCustomReader extends JdbcCursorItemReader<Employee> implements ItemReader<Employee>{
+public class CustomDataSourceReader extends JdbcCursorItemReader<Employee> implements ItemReader<Employee>{
 
-    public MyCustomReader(@Qualifier(Constants.CatalogDataSource) @Autowired DataSource dataSource) {
+    public CustomDataSourceReader(@Qualifier(Constants.CatalogDataSource) @Autowired DataSource dataSource) {
         setDataSource(dataSource);
         setSql("SELECT id, name, salary FROM employee");
         setFetchSize(100);

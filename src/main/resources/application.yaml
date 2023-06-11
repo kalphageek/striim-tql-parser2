@@ -30,3 +30,6 @@ logging:
       hibernate:
         SQL: DEBUG
         type.descriptor.sql.BasicBinder: TRACE
+striim:
+  source.directory: /tmp
+  target.directory: /tmp
